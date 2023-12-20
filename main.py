@@ -22,6 +22,11 @@ LEFT = (-1, 0)
 RIGHT = (1, 0)
 
 
+def game_over():
+    pygame.quit()
+    sys.exit()
+
+
 class SnakeGame:
     def __init__(self):
         self.width = WIDTH
@@ -87,15 +92,11 @@ class SnakeGame:
                 or head[1] < 0
                 or head[1] >= self.height
         ):
-            self.game_over()
+            game_over()
 
         # Check if the snake bites itself
         if head in self.snake[1:]:
-            self.game_over()
-
-    def game_over(self):
-        pygame.quit()
-        sys.exit()
+            game_over()
 
     def run(self):
         while True:
