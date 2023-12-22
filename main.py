@@ -11,7 +11,8 @@ SNAKE_SIZE = 20
 FPS = 10
 
 # Colors
-WHITE = (255, 255, 255)
+WHITE = (112, 128, 144)
+SCORE_WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 
@@ -68,7 +69,7 @@ class SnakeGame:
         pygame.draw.rect(self.screen, RED, (self.food[0], self.food[1], self.snake_size, self.snake_size))
 
     def draw_score(self):
-        score_text = self.font.render(f"Score: {self.score}", True, WHITE)
+        score_text = self.font.render(f"Score: {self.score}", True, SCORE_WHITE)
         self.screen.blit(score_text, (10, 10))
 
     def move(self):
