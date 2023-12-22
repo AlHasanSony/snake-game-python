@@ -11,10 +11,10 @@ SNAKE_SIZE = 20
 FPS = 10
 
 # Colors
-WHITE = (112, 128, 144)
+GRID = (54, 69, 79)
 SCORE_WHITE = (255, 255, 255)
-RED = (255, 0, 0)
-GREEN = (0, 255, 0)
+FOOD = (255, 0, 0)
+SNAKE = (0, 255, 100)
 
 # Direction
 UP = (0, -1)
@@ -57,16 +57,16 @@ class SnakeGame:
 
     def draw_grid(self):
         for x in range(0, self.width, self.grid_size):
-            pygame.draw.line(self.screen, WHITE, (x, 0), (x, self.height))
+            pygame.draw.line(self.screen, GRID, (x, 0), (x, self.height))
         for y in range(0, self.height, self.grid_size):
-            pygame.draw.line(self.screen, WHITE, (0, y), (self.width, y))
+            pygame.draw.line(self.screen, GRID, (0, y), (self.width, y))
 
     def draw_snake(self):
         for segment in self.snake:
-            pygame.draw.rect(self.screen, GREEN, (segment[0], segment[1], self.snake_size, self.snake_size))
+            pygame.draw.rect(self.screen, SNAKE, (segment[0], segment[1], self.snake_size, self.snake_size))
 
     def draw_food(self):
-        pygame.draw.rect(self.screen, RED, (self.food[0], self.food[1], self.snake_size, self.snake_size))
+        pygame.draw.rect(self.screen, FOOD, (self.food[0], self.food[1], self.snake_size, self.snake_size))
 
     def draw_score(self):
         score_text = self.font.render(f"Score: {self.score}", True, SCORE_WHITE)
