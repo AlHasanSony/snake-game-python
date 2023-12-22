@@ -8,7 +8,7 @@ pygame.init()
 WIDTH, HEIGHT = 640, 480
 GRID_SIZE = 20
 SNAKE_SIZE = 20
-FPS = 10
+SNAKE_SPEED_FPS = 10
 
 # Colors
 GRID = (54, 69, 79)
@@ -34,7 +34,7 @@ class SnakeGame:
         self.height = HEIGHT
         self.grid_size = GRID_SIZE
         self.snake_size = SNAKE_SIZE
-        self.fps = FPS
+        self.fps = SNAKE_SPEED_FPS
 
         self.screen = pygame.display.set_mode((self.width, self.height))
         pygame.display.set_caption("Snake Game")
